@@ -41,7 +41,7 @@ public class Parent {
         js.executeScript("arguments[0].scrollIntoView(true);", webElement);
     }
     public void scrollUpToElement(WebElement webElement) {
-        js.executeScript("arguments[0].setAttribute('style','top:0px');", webElement);
+       // js.executeScript("arguments[0].setAttribute('style','top:0px');", webElement);
         js.executeScript("arguments[0].scrollIntoView(true);", webElement);
     }
 
