@@ -29,7 +29,7 @@ public class EducationSubjectsSteps {
     @When("^Click on Subjects$")
     public void click_on_Subjects() {
         ln.clickFunction(ln.getSubjects());
-
+        dc.waitUntilVisible(dc.getSubjetText());
     }
 
     @When("^Click on addSubjects$")
@@ -78,11 +78,9 @@ public class EducationSubjectsSteps {
     @When("^click  on delete buttons$")
     public void click_on_delete_buttons() {
 
-        WebDriverWait wait = new WebDriverWait(BaseWebDriver.getDriver(), 10);
-        wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.xpath("//ms-delete-button[@table='true']//button"), 3));
+        dc.waitUntilListLessThan(By.xpath("//ms-delete-button[@table='true']//button"), 3);
         dc.clickFunction(dc.getDelete1());
         dc.clickFunction(dc.getDelete2());
-        //dc.myWait(3);
     }
 
     @Then("^User should see success message$")

@@ -29,43 +29,68 @@ public class DialogContent extends Parent {
     private WebElement loginErrorMsg;
 
     @FindBy(xpath ="//ms-add-button[@table='true']//button")
-    public WebElement SubjectsAddButton;
-
+    private WebElement SubjectsAddButton;
 
     @FindBy(xpath ="//ms-text-field[@formcontrolname='name']//input")
-    public WebElement SubjectsName;
+    private WebElement SubjectsName;
 
     @FindBy(xpath ="//ms-text-field[@formcontrolname='code']//input")
-    public WebElement SubjectsCode;
+    private WebElement SubjectsCode;
 
-    @FindBy(xpath ="//div[@id='mat-select-value-7']")
-    public WebElement SubjectsCatagory;
+    @FindBy(xpath ="(//mat-select//span)[4]")
+    private WebElement SubjectsCatagory;
 
 
     @FindBy(xpath ="(//mat-option//span[@class='mat-option-text'])[3]")
-    public WebElement InformationTechnology;
+    private WebElement InformationTechnology;
 
     @FindBy(xpath =" //ms-text-field//input")
-    public WebElement deleteInputName2;
+    private WebElement deleteInputName2;
 
     @FindBy(xpath ="//ms-search-button//button")
-    public WebElement deleteSerch;
+    private WebElement deleteSerch;
 
 
     @FindBy(xpath ="//ms-delete-button[@table='true']//button")
-    public WebElement delete1;
+    private WebElement delete1;
 
 
     @FindBy(xpath ="//button[@type='submit']//span[@class='mat-button-wrapper']")
-    public WebElement delete2;
+    private WebElement delete2;
 
+    @FindBy(xpath ="(//span[@class='mat-button-wrapper'])[18]")
+    private WebElement deleteButton2;
 
     @FindBy(xpath ="//ms-save-button//button")
-    public WebElement save;
+    private WebElement save;
 
     @FindBy(xpath = "//hot-toast-container//div[contains(text(),'successfully')]")
     private WebElement successMessage;
 
+
+    @FindBy(xpath = "//ms-add-button[@tooltip='SUBJECT_CATEGORIES.TITLE.ADD']")
+    private WebElement addSubjectCategory;
+
+    @FindBy(xpath = "( //ms-text-field[@placeholder='GENERAL.FIELD.NAME']//input)[2]")
+    private WebElement SubjectCategoriesName;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
+    private WebElement SubjectCategoriesCode;
+
+    @FindBy(xpath = "(//ms-save-button//button//span)[2]")
+    private WebElement SubjectCategoriesSave;
+
+    @FindBy(xpath = "(//mat-option//span)[7]")
+    private WebElement  MySubjectCat;
+
+    @FindBy(xpath ="//ms-delete-button[@class='ng-star-inserted']//button")
+    private WebElement deleteButton;
+
+    @FindBy(xpath = "//div[contains(text(),'Subject Category')]")
+    private WebElement subjetText;
+
+    @FindBy(xpath = "//div[contains(text(),'because')]")
+    private WebElement errorMessage;
 
 
 
@@ -131,5 +156,41 @@ public class DialogContent extends Parent {
 
     public WebElement getSuccessMessage() {
         return successMessage;
+    }
+
+    public WebElement getAddSubjectCategory() {
+        return addSubjectCategory;
+    }
+
+    public WebElement getSubjectCategoriesName() {
+        return SubjectCategoriesName;
+    }
+
+    public WebElement getSubjectCategoriesCode() {
+        return SubjectCategoriesCode;
+    }
+
+    public WebElement getSubjectCategoriesSave() {
+        return SubjectCategoriesSave;
+    }
+
+    public WebElement getMySubjectCat() {
+        return MySubjectCat;
+    }
+
+    public WebElement getDeleteButton() {
+        return deleteButton;
+    }
+
+    public WebElement getDeleteButton2() {
+        return deleteButton2;
+    }
+
+    public WebElement getSubjetText() {
+        return subjetText;
+    }
+
+    public WebElement getErrorMessage() {
+        return errorMessage;
     }
 }

@@ -17,10 +17,19 @@ Feature: Login Education
     And Click on InformationTechnology
     And Click on Save Button
     Then User should see success message
+
+    Examples:
+      | SubjectsName | SubjectCode |
+      | TestSubject  | ts          |
+
+  Scenario Outline: Subject Delete
+    When Click on education
+    And  Click on Setup
+    And Click on Subjects
     And delete inputName "<SubjectsName>"
     And click search button
     And click  on delete buttons
     Then User should see success message
     Examples:
-      | SubjectsName | SubjectCode |
-      | TestSubject  | ts          |
+      | SubjectsName |
+      | TestSubject  |

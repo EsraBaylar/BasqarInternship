@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class LeftNav extends Parent {
 
     public LeftNav() {
-
         PageFactory.initElements(BaseWebDriver.getDriver(), this);
     }
 
@@ -33,10 +32,8 @@ public class LeftNav extends Parent {
     @FindBy(xpath="//span[text()='Subjects']")
     private WebElement subjects;
 
-
-
-
-
+    @FindBy(xpath="//span[text()='Subject Categories']")
+    private WebElement subjectCategories;
 
 
     public WebElement getSalaryModifiers() {
@@ -66,4 +63,9 @@ public class LeftNav extends Parent {
     public WebElement getSubjects() {
         return subjects;
     }
+
+    public WebElement getSubjectCategories() {
+        return subjectCategories;
+    }
+
 }
