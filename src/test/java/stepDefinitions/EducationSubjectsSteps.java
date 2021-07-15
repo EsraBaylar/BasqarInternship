@@ -10,9 +10,14 @@ import pages.LeftNav;
 import utilies.BaseWebDriver;
 
 public class EducationSubjectsSteps {
-    LeftNav ln = new LeftNav();
-    DialogContent dc = new DialogContent();
 
+    private final DialogContent dc;
+    private final LeftNav ln;
+
+    public EducationSubjectsSteps(DialogContent dc, LeftNav ln) {
+        this.dc = dc;
+        this.ln = ln;
+    }
 
     @When("^Click on education$")
     public void click_on_education() {
@@ -46,8 +51,8 @@ public class EducationSubjectsSteps {
     }
 
 
-    @When("^Click on Subjects catagort$")
-    public void click_on_Subjects_catagort() {
+    @When("^Click on Subjects category$")
+    public void click_on_Subjects_category() {
         dc.clickFunction(dc.getSubjectsCatagory());
 
     }
@@ -86,8 +91,7 @@ public class EducationSubjectsSteps {
     @Then("^User should see success message$")
     public void userShouldSeeSuccessMessage() {
         dc.verifyElementContainsText(dc.getSuccessMessage(), "success");
-        WebDriverWait wait=new WebDriverWait(BaseWebDriver.getDriver(),10);
-        wait.until(ExpectedConditions.invisibilityOf(dc.getSuccessMessage()));
+        dc.waitUntilInVisible(dc.getSuccessMessage());
     }
 }
 

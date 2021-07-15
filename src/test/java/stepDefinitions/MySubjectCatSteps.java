@@ -12,9 +12,14 @@ import pages.LeftNav;
 import utilies.BaseWebDriver;
 
 public class MySubjectCatSteps {
-     LeftNav ln=new LeftNav();
-     DialogContent dc=new DialogContent();
 
+    private final DialogContent dc;
+    private final LeftNav ln;
+
+    public MySubjectCatSteps(DialogContent dc, LeftNav ln) {
+        this.dc = dc;
+        this.ln = ln;
+    }
 
     @And("^Click on SubjectCategory$")
     public void clickOnSubjectCategory() {
@@ -41,9 +46,9 @@ public class MySubjectCatSteps {
 
     }
 
-    @And("^Click on Save Buttonn$")
+    @And("^Click on Save Button$")
 
-    public void clickOnSaveButtonn() {
+    public void clickOnSaveButton() {
         dc.clickFunction(dc.getSubjectCategoriesSave());
     }
 
@@ -59,12 +64,11 @@ public class MySubjectCatSteps {
     @And("^Click on SubjectCategorySecond$")
     public void clickOnSubjectCategorySecond() {
         ln.clickFunction(ln.getSubjectCategories());
-        WebDriverWait wait=new WebDriverWait(BaseWebDriver.getDriver(),10);
-        wait.until(ExpectedConditions.invisibilityOf(dc.getSubjetText()));
+        ln.waitUntilInVisible(dc.getSubjetText());
     }
 
-    @Then("^User shoul see error message$")
-    public void userShoulSeeErrorMessage() {
+    @Then("^User should see error message$")
+    public void userShouldSeeErrorMessage() {
         dc.verifyElementContainsText(dc.getErrorMessage(),"because");
     }
 

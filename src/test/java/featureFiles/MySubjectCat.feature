@@ -24,9 +24,9 @@ Feature: Login MySubjectCat
     And Click on Subjects
     And Click on addSubjects
     When Add a Subjects  name as "<SubjectsName>" Subjects code"<SubjectCode>"
-    And Click on Subjects catagort
+    And Click on Subjects category
     And Click on MySubjectCat
-    And Click on Save Buttonn
+    And Click on Save Button
     Then User should see success message
     Examples:
       | SubjectsName | SubjectCode |
@@ -37,7 +37,7 @@ Feature: Login MySubjectCat
     And Click on Setup
     And Click on SubjectCategory
     And deletion actions "<SubjectCategoryName1>"
-    Then User shoul see error message
+    Then User should see error message
     Examples:
       | SubjectCategoryName1 |
       | MySubjectCat         |

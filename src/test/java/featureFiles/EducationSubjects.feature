@@ -13,7 +13,7 @@ Feature: Login Education
     And Click on Subjects
     And Click on addSubjects
     When Add a Subjects  name as "<SubjectsName>" Subjects code"<SubjectCode>"
-    And Click on Subjects catagort
+    And Click on Subjects category
     And Click on InformationTechnology
     And Click on Save Button
     Then User should see success message
