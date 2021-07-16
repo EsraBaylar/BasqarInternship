@@ -40,7 +40,7 @@ public class EducationSubjectsSteps {
 
     }
 
-    @When("^Add a Subjects  name as \"([^\"]*)\" Subjects code\"([^\"]*)\"$")
+    @When("^Add a Subjects name as \"([^\"]*)\" Subjects code\"([^\"]*)\"$")
     public void add_a_Subjects_name_as_Subjects_code(String name, String code) {
         dc.waitUntilClickable(dc.getSubjectsName());
         dc.sendKeysFunction(dc.getSubjectsName(), name);
@@ -60,11 +60,6 @@ public class EducationSubjectsSteps {
 
     }
 
-    @When("^Click on Save Button$")
-    public void click_on_Save_Button() {
-        dc.clickFunction(dc.getSave());
-    }
-
     @When("^delete inputName \"([^\"]*)\"$")
     public void delete_inputName(String name) {
         dc.sendKeysFunction(dc.getDeleteInputName2(), name);
@@ -77,7 +72,7 @@ public class EducationSubjectsSteps {
 
     }
 
-    @When("^click  on delete buttons$")
+    @When("^click on delete buttons$")
     public void click_on_delete_buttons() {
 
         dc.waitUntilListLessThan(By.xpath("//ms-delete-button[@table='true']//button"), 3);

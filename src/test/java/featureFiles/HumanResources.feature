@@ -1,10 +1,9 @@
 Feature: PositionSalary
 
   Background:
-#    Given Navigate to basqar
-#    When Enter Password and Username and click button
-#    Then  User muss login successfully
-
+    Given Navigate to Basqar
+    When Enter valid username and password
+    Then  Success message should be displayed
 
   Scenario: Navigate to Human Resources
     When Click to Human Resources and Setup and Position Salary
