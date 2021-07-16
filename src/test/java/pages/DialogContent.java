@@ -48,7 +48,7 @@ public class DialogContent extends Parent {
     private WebElement deleteInputName2;
 
     @FindBy(xpath ="//ms-search-button//button")
-    private WebElement deleteSerch;
+    private WebElement deleteSearch;
 
 
     @FindBy(xpath ="//ms-delete-button[@table='true']//button")
@@ -92,6 +92,34 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//div[contains(text(),'because')]")
     private WebElement errorMessage;
 
+
+    @FindBy(xpath = "// ms-add-button[contains(@tooltip,'POSITIONS.TITLE.ADD')]")
+    private WebElement addButtonSalary;
+
+    @FindBy(xpath = "(//input[@id='ms-text-field-0'])[1]")
+    private WebElement newSalary;
+
+    @FindBy(xpath = "//ms-search-button//button")
+    private WebElement searchButton;
+
+    @FindBy(css= "input#mat-input-2")
+    private WebElement searchInput;
+
+    @FindBy(xpath = "// ms-add-button[contains(@tooltip,'EMPLOYEE_POSITION.TITLE.ADD')]")
+    private WebElement addpositionsClick;
+
+    @FindBy(xpath = "(//ms-text-field[@placeholder='GENERAL.FIELD.NAME']//input)[2]")
+    private WebElement inputPositionsName;
+
+    @FindBy(xpath = "(//ms-text-field[@placeholder='GENERAL.FIELD.SHORTNAME']//input)[2]")
+    private WebElement inputPositionsShortName;
+
+
+    @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.NAME']//input")
+    private WebElement inputPositionsNameSearch;
+
+    @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.SHORTNAME']//input")
+    private WebElement inputPositionsShortNameSearch;
 
 
     public WebElement getUsername() {
@@ -139,7 +167,7 @@ public class DialogContent extends Parent {
     }
 
     public WebElement getDeleteSerch() {
-        return deleteSerch;
+        return deleteSearch;
     }
 
     public WebElement getDelete1() {
@@ -192,5 +220,46 @@ public class DialogContent extends Parent {
 
     public WebElement getErrorMessage() {
         return errorMessage;
+    }
+
+
+    public WebElement getDeleteSearch() {
+        return deleteSearch;
+    }
+
+    public WebElement getAddButtonSalary() {
+        return addButtonSalary;
+    }
+
+    public WebElement getNewSalary() {
+        return newSalary;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public WebElement getSearchInput() {
+        return searchInput;
+    }
+
+    public WebElement getAddpositionsClick() {
+        return addpositionsClick;
+    }
+
+    public WebElement getInputPositionsName() {
+        return inputPositionsName;
+    }
+
+    public WebElement getInputPositionsShortName() {
+        return inputPositionsShortName;
+    }
+
+    public WebElement getInputPositionsNameSearch() {
+        return inputPositionsNameSearch;
+    }
+
+    public WebElement getInputPositionsShortNameSearch() {
+        return inputPositionsShortNameSearch;
     }
 }

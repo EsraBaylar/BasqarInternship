@@ -35,6 +35,19 @@ public class LeftNav extends Parent {
     @FindBy(xpath="//span[text()='Subject Categories']")
     private WebElement subjectCategories;
 
+    @FindBy(xpath = "//span[text()='Human Resources']")
+    private WebElement HumanRsrcClick;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[3]")
+    private WebElement setupClick;
+
+    @FindBy(xpath = "//span[text()='Position Salary']")
+    private WebElement positionSalary;
+
+    @FindBy(xpath = "(//span[contains(text(),'Positions')])[1]")
+    private WebElement positionsClick;
+
+
 
     public WebElement getSalaryModifiers() {
         return salaryModifiers;
@@ -67,5 +80,21 @@ public class LeftNav extends Parent {
     public WebElement getSubjectCategories() {
         return subjectCategories;
     }
+
+    public WebElement getHumanRsrcClick() {
+        return HumanRsrcClick;
+    }
+    public WebElement getSetupClick() {
+        return setupClick;
+    }
+
+    public WebElement getPositionSalary() {
+        return positionSalary;
+    }
+
+    public WebElement getPositionsClick() {
+        return positionsClick;
+    }
+
 
 }
