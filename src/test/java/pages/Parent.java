@@ -49,6 +49,10 @@ public class Parent {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
+    public void waitUntilInVisible(WebElement webElement){
+        wait.until(ExpectedConditions.invisibilityOf(webElement));
+    }
+
     public void myWait(int second) {
         try {
             Thread.sleep(second * 1000);
