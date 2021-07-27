@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,15 +15,17 @@ import java.util.List;
 public class Parent {
     WebDriverWait wait;
     JavascriptExecutor js;
+    Actions actions ;
 
     public Parent() {
         js = (JavascriptExecutor) BaseWebDriver.getDriver();
         wait = new WebDriverWait(BaseWebDriver.getDriver(), 30);
+        actions=new Actions(BaseWebDriver.getDriver()) ;
     }
 
     public void sendKeysFunction(WebElement webElement, String value) {
         waitUntilVisible(webElement);
-        scrollUpToElement(webElement);
+       // scrollUpToElement(webElement);
         webElement.clear();
         webElement.sendKeys(value);
     }
@@ -84,4 +87,14 @@ public class Parent {
             }
         }
     }
+
+    public void sendKeysWithActions (WebElement webElement, String value){
+        actions.sendKeys(webElement,value).build().perform();
+
+
+
+    }
+
+
+
 }

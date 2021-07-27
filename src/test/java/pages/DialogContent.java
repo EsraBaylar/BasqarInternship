@@ -83,7 +83,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//mat-option//span)[7]")
     private WebElement  MySubjectCat;
 
-    @FindBy(xpath ="//ms-delete-button[@class='ng-star-inserted']//button")
+    @FindBy(xpath ="//ms-delete-button//button")
     private WebElement deleteButton;
 
     @FindBy(xpath = "//div[contains(text(),'Subject Category')]")
@@ -121,6 +121,91 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.SHORTNAME']//input")
     private WebElement inputPositionsShortNameSearch;
 
+    @FindBy(xpath = "//ms-text-field[@name='description']")
+    private WebElement description;
+
+    @FindBy(xpath = "//mat-form-field/div/div/div/input[@id='mat-input-6']")
+    private WebElement budgetInfoStartDate;
+
+    @FindBy(xpath = "//mat-form-field/div/div/div/input[@id='mat-input-7']")
+    private WebElement budgetInfoEndDate;
+
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
+    private WebElement addButton;
+
+    @FindBy(xpath = " (//div[@class='mat-calendar-body-cell-content mat-focus-indicator'])[1]")
+    private WebElement date;
+
+    @FindBy(xpath = "(//div[@class='mat-calendar-body-cell-content mat-focus-indicator'])[28]")
+    private WebElement date2;
+
+    @FindBy(css = "button[class='mat-focus-indicator mat-icon-button mat-button-base']")
+    private WebElement btnDate;
+
+    @FindBy(xpath = "(//button[@aria-label='Open calendar'])[2]")
+    private WebElement btndate2;
+
+    @FindBy(xpath = "//button[text()='Accept all cookies']")
+    private WebElement cookiesaccept;
+
+    @FindBy(css = "ms-edit-button>button")
+    private WebElement btnEdit;
+
+    @FindBy(id= " #mat-input-1")
+    private WebElement comment;
+
+    @FindBy(xpath = "//span[contains(text(),'Delete')]")
+    private WebElement deleteConfirmBtn;
+
+    @FindBy(css = "ms-text-field[name='description']>input")
+    private WebElement descriptionBtn2;
+
+    @FindBy(xpath = "(//div[@class='mat-calendar-body-cell-content mat-focus-indicator'])[24]")
+    private WebElement date3;
+
+    public WebElement getDate3() {
+        return date3;
+    }
+
+    public WebElement getDescriptionBtn2() {
+        return descriptionBtn2;
+    }
+
+    public WebElement getDeleteConfirmBtn() {
+        return deleteConfirmBtn;
+    }
+
+    public WebElement getComment() {
+        return comment;
+    }
+
+    public WebElement getBtnEdit() {
+        return btnEdit;
+    }
+
+    public WebElement getCookiesaccept() {
+        return cookiesaccept;
+    }
+
+    public WebElement getBtndate2() {
+        return btndate2;
+    }
+
+    public WebElement getBtnDate() {
+        return btnDate;
+    }
+
+    public WebElement getDate2() {
+        return date2;
+    }
+
+    public WebElement getDate() {
+        return date;
+    }
+
+    public WebElement getAddButton() {
+        return addButton;
+    }
 
     public WebElement getUsername() {
         return username;
@@ -261,5 +346,17 @@ public class DialogContent extends Parent {
 
     public WebElement getInputPositionsShortNameSearch() {
         return inputPositionsShortNameSearch;
+    }
+
+    public WebElement getDescription() {
+        return description;
+    }
+
+    public WebElement getBudgetInfoStartDate() {
+        return budgetInfoStartDate;
+    }
+
+    public WebElement getBudgetInfoEndDate() {
+        return budgetInfoEndDate;
     }
 }
