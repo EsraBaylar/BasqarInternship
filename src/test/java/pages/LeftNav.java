@@ -69,18 +69,6 @@ public class LeftNav extends Parent {
         return budgetGroups;
     }
 
-    public WebElement getSalaryModifiers() {
-        return salaryModifiers;
-    }
-
-    public WebElement getHrButton() {
-        return hrButton;
-    }
-
-    public WebElement getSetupHRbutton() {
-        return setupHRbutton;
-    }
-
     public WebElement getSetupOne() {
         return setupOne;
     }
@@ -114,6 +102,27 @@ public class LeftNav extends Parent {
 
     public WebElement getPositionsClick() {
         return positionsClick;
+    }
+
+    @FindBy(xpath = "(//span[text()='Salary Constants'])[1]")
+    private WebElement salaryConstants;
+
+
+
+    public WebElement getSalaryConstants() {
+        return salaryConstants;
+    }
+
+    public WebElement getSalaryModifiers() {
+        return salaryModifiers;
+    }
+
+    public WebElement getHrButton() {
+        return hrButton;
+    }
+
+    public WebElement getSetupHRbutton() {
+        return setupHRbutton;
     }
 
 

@@ -203,13 +203,6 @@ public class DialogContent extends Parent {
         return date;
     }
 
-    public WebElement getAddButton() {
-        return addButton;
-    }
-
-    public WebElement getUsername() {
-        return username;
-    }
 
     public WebElement getPassword() {
         return password;
@@ -267,9 +260,6 @@ public class DialogContent extends Parent {
         return save;
     }
 
-    public WebElement getSuccessMessage() {
-        return successMessage;
-    }
 
     public WebElement getAddSubjectCategory() {
         return addSubjectCategory;
@@ -291,9 +281,6 @@ public class DialogContent extends Parent {
         return MySubjectCat;
     }
 
-    public WebElement getDeleteButton() {
-        return deleteButton;
-    }
 
     public WebElement getDeleteButton2() {
         return deleteButton2;
@@ -320,9 +307,6 @@ public class DialogContent extends Parent {
         return newSalary;
     }
 
-    public WebElement getSearchButton() {
-        return searchButton;
-    }
 
     public WebElement getSearchInput() {
         return searchInput;
@@ -358,5 +342,69 @@ public class DialogContent extends Parent {
 
     public WebElement getBudgetInfoEndDate() {
         return budgetInfoEndDate;
+    }
+
+
+    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
+    private WebElement acceptCookies;
+
+    @FindBy(xpath = "(//div[@fxlayout='column'])[1]/span[1]")
+    private WebElement schoolName;
+
+    @FindBy(xpath = "//ms-save-button//button")
+    private WebElement saveButton;
+
+    @FindBy(xpath = "//ms-edit-button//button")
+    private WebElement editBtn;
+
+    @FindBy(css = "[data-placeholder='Description']")
+    private WebElement findDescription;
+
+
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement deleteConfirmButton;
+
+    public WebElement getUsername() {
+        return username;
+    }
+
+    public WebElement getAcceptCookies() {
+        return acceptCookies;
+    }
+
+    public WebElement getSchoolName() {
+        return schoolName;
+    }
+
+    public WebElement getSaveButton() {
+        return saveButton;
+    }
+
+    public WebElement getAddButton() {
+        return addButton;
+    }
+
+    public WebElement getEditBtn() {
+        return editBtn;
+    }
+
+    public WebElement getDeleteButton() {
+        return deleteButton;
+    }
+
+    public WebElement getFindDescription() {
+        return findDescription;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public WebElement getSuccessMessage() {
+        return successMessage;
+    }
+
+    public WebElement getDeleteConfirmButton() {
+        return deleteConfirmButton;
     }
 }
