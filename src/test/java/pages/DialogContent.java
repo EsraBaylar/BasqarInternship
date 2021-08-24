@@ -28,6 +28,9 @@ public class DialogContent extends Parent {
     @FindBy(css = "div[class='hot-toast-message']")
     private WebElement loginErrorMsg;
 
+    @FindBy(xpath = "//button[text()='Accept all cookies']")
+    private WebElement acceptCookies;
+
     @FindBy(xpath ="//ms-add-button[@table='true']//button")
     private WebElement SubjectsAddButton;
 
@@ -163,6 +166,9 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//div[@class='mat-calendar-body-cell-content mat-focus-indicator'])[24]")
     private WebElement date3;
 
+    public WebElement getAcceptCookies(){
+        return acceptCookies;
+    }
     public WebElement getDate3() {
         return date3;
     }
