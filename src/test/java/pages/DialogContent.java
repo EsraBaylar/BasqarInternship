@@ -166,6 +166,22 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//div[@class='mat-calendar-body-cell-content mat-focus-indicator'])[24]")
     private WebElement date3;
 
+    @FindBy(xpath = "(//div[@fxlayout='column'])[1]/span[1]")
+    private WebElement schoolName;
+
+    @FindBy(xpath = "//ms-save-button//button")
+    private WebElement saveButton;
+
+    @FindBy(xpath = "//ms-edit-button//button")
+    private WebElement editBtn;
+
+    @FindBy(css = "[data-placeholder='Description']")
+    private WebElement findDescription;
+
+
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement deleteConfirmButton;
+
     public WebElement getAcceptCookies(){
         return acceptCookies;
     }
@@ -350,32 +366,8 @@ public class DialogContent extends Parent {
         return budgetInfoEndDate;
     }
 
-
-    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
-    private WebElement acceptCookies;
-
-    @FindBy(xpath = "(//div[@fxlayout='column'])[1]/span[1]")
-    private WebElement schoolName;
-
-    @FindBy(xpath = "//ms-save-button//button")
-    private WebElement saveButton;
-
-    @FindBy(xpath = "//ms-edit-button//button")
-    private WebElement editBtn;
-
-    @FindBy(css = "[data-placeholder='Description']")
-    private WebElement findDescription;
-
-
-    @FindBy(xpath = "//button[@type='submit']")
-    private WebElement deleteConfirmButton;
-
     public WebElement getUsername() {
         return username;
-    }
-
-    public WebElement getAcceptCookies() {
-        return acceptCookies;
     }
 
     public WebElement getSchoolName() {
