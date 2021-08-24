@@ -15,70 +15,75 @@ import java.time.format.DateTimeFormatter;
 
 public class SalaryConstantsStep {
 
-    DialogContent mainContent = new DialogContent();
-    LeftNav lf = new LeftNav();
-    FormContent fc = new FormContent();
+    private final DialogContent dialogContent;
+    private final LeftNav leftNav;
+    private final FormContent formContent;
 
+    public SalaryConstantsStep(DialogContent dialogContent, LeftNav leftNav, FormContent formContent) {
+        this.dialogContent = dialogContent;
+        this.leftNav = leftNav;
+        this.formContent = formContent;
+    }
 
     @When("^click Human Resources then Setup then Salary Constants$")
     public void click_Human_Resources_then_Setup_then_Salary_Constants() {
-        lf.clickFunction(lf.getHrButton());
-        lf.clickFunction(lf.getSetupHRbutton());
-        lf.clickFunction(lf.getSalaryConstants());
+        leftNav.clickFunction(leftNav.getHrButton());
+        leftNav.clickFunction(leftNav.getSetupHRbutton());
+        leftNav.clickFunction(leftNav.getSalaryConstants());
     }
 
     @Then("^click Edit Button and fill the form fields \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"  and Save$")
     public void click_Edit_Button_and_fill_the_form_fields_and_Save(String name, String key, String value) {
-        mainContent.clickFunction(mainContent.getEditBtn());
-        fc.sendKeysFunction(fc.getNameField(), name);
-        fc.sendKeysFunction(fc.getValueInput(), value);
-        fc.clickFunction(fc.getKeyInput());
+        dialogContent.clickFunction(dialogContent.getEditBtn());
+        formContent.sendKeysFunction(formContent.getNameField(), name);
+        formContent.sendKeysFunction(formContent.getValueInput(), value);
+        formContent.clickFunction(formContent.getKeyInput());
         Actions actions = new Actions(BaseWebDriver.getDriver());
-        Action action = actions.moveToElement(fc.getKeyInput())
-                .click(fc.getKeyInput())
+        Action action = actions.moveToElement(formContent.getKeyInput())
+                .click(formContent.getKeyInput())
                 .sendKeys("key1")
                 .sendKeys(Keys.ENTER)
                 .build();
         action.perform();
 
-        fc.clickFunction(fc.getValidFrominput());
+        formContent.clickFunction(formContent.getValidFrominput());
         LocalDate today = LocalDate.now();
         DateTimeFormatter newFormat = DateTimeFormatter.ofPattern("dd");
         String formattedDate = today.format(newFormat);
-        for (int i = 0; i < fc.getCalendarList().size(); i++) {
-            if (fc.getCalendarList().get(i).getText().equals(formattedDate))
-            {fc.getCalendarList().get(i).click();
+        for (int i = 0; i < formContent.getCalendarList().size(); i++) {
+            if (formContent.getCalendarList().get(i).getText().equals(formattedDate))
+            {formContent.getCalendarList().get(i).click();
                 break;}
         }
-        mainContent.clickFunction(mainContent.getSaveButton());
+        dialogContent.clickFunction(dialogContent.getSaveButton());
 
     }
 
     @Then("^click Add Button and fill the form \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"  and Save$")
     public void clickAddButtonAndFillTheFormFieldsAndSave(String arg0, String arg2, String arg3)  {
-        mainContent.clickFunction(mainContent.getAddButton());
-        fc.sendKeysFunction(fc.getNameField(), arg0);
-        fc.sendKeysFunction(fc.getValueInput(), arg3);
+        dialogContent.clickFunction(dialogContent.getAddButton());
+        formContent.sendKeysFunction(formContent.getNameField(), arg0);
+        formContent.sendKeysFunction(formContent.getValueInput(), arg3);
 
-        fc.clickFunction(fc.getKeyInput());
+        formContent.clickFunction(formContent.getKeyInput());
         Actions actions = new Actions(BaseWebDriver.getDriver());
-        Action action = actions.moveToElement(fc.getKeyInput())
-                .click(fc.getKeyInput())
+        Action action = actions.moveToElement(formContent.getKeyInput())
+                .click(formContent.getKeyInput())
                 .sendKeys("key1")
                 .sendKeys(Keys.ENTER)
                 .build();
         action.perform();
 
-        fc.clickFunction(fc.getValidFrominput());
+        formContent.clickFunction(formContent.getValidFrominput());
         LocalDate today = LocalDate.now();
         DateTimeFormatter newFormat = DateTimeFormatter.ofPattern("dd");
         String formattedDate = today.format(newFormat);
-        for (int i = 0; i < fc.getCalendarList().size(); i++) {
-            if (fc.getCalendarList().get(i).getText().equals(formattedDate))
-            {fc.getCalendarList().get(i).click();
+        for (int i = 0; i < formContent.getCalendarList().size(); i++) {
+            if (formContent.getCalendarList().get(i).getText().equals(formattedDate))
+            {formContent.getCalendarList().get(i).click();
             break;}
         }
-        mainContent.clickFunction(mainContent.getSaveButton());
+        dialogContent.clickFunction(dialogContent.getSaveButton());
     }
 
 }
