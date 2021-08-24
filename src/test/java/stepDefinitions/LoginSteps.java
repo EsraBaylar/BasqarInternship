@@ -29,6 +29,7 @@ public class LoginSteps {
     @Then("^Enter valid username and password$")
     public void enterValidUsernameAndPassword() {
 
+        dialogContent.clickFunction(dialogContent.getAcceptCookies());
         dialogContent.sendKeysFunction(dialogContent.getUsername(), loginData.get(1).get(0));
         dialogContent.sendKeysFunction(dialogContent.getPassword(), loginData.get(1).get(1));
         dialogContent.clickFunction(dialogContent.getLoginBtn());
@@ -41,6 +42,7 @@ public class LoginSteps {
 
     @Then("^Enter invalid username and password$")
     public void enterInvalidUsernameAndPassword() {
+        dialogContent.clickFunction(dialogContent.getAcceptCookies());
         dialogContent.sendKeysFunction(dialogContent.getUsername(), loginData.get(1).get(2));
         dialogContent.sendKeysFunction(dialogContent.getPassword(), loginData.get(1).get(3));
         dialogContent.clickFunction(dialogContent.getLoginBtn());
