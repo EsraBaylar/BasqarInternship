@@ -1,100 +1,70 @@
-package pages;
-
+package Pages;
+import Utilities.BaseDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import utilies.BaseWebDriver;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.List;
+import org.openqa.selenium.WebElement;
 
 public class Parent {
-    WebDriverWait wait;
-    JavascriptExecutor js;
-    Actions actions ;
+    WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), 20);
 
-    public Parent() {
-        js = (JavascriptExecutor) BaseWebDriver.getDriver();
-        wait = new WebDriverWait(BaseWebDriver.getDriver(), 30);
-        actions=new Actions(BaseWebDriver.getDriver()) ;
-    }
-
-    public void sendKeysFunction(WebElement webElement, String value) {
-        waitUntilVisible(webElement);
-       // scrollUpToElement(webElement);
-        webElement.clear();
-        webElement.sendKeys(value);
-    }
-
-    public void clickFunction(WebElement webElement) {
-        waitUntilClickable(webElement);
-        scrollUpToElement(webElement);
-        webElement.click();
-    }
-
-    public void waitUntilClickable(WebElement webElement) {
-        wait.until(ExpectedConditions.elementToBeClickable(webElement));
-    }
-
-    public void scrollToElement(WebElement webElement) {
-        js.executeScript("arguments[0].scrollIntoView(true);", webElement);
-    }
-    public void scrollUpToElement(WebElement webElement) {
-        js.executeScript("arguments[0].setAttribute('style','top:0px');", webElement);
-        js.executeScript("arguments[0].scrollIntoView(true);", webElement);
-    }
-
-    public void waitUntilVisible(WebElement webElement) {
-        wait.until(ExpectedConditions.visibilityOf(webElement));
-    }
-
-    public void waitUntilInVisible(WebElement webElement){
-        wait.until(ExpectedConditions.invisibilityOf(webElement));
-    }
-
-    public void myWait(int second) {
-        try {
-            Thread.sleep(second * 1000);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void verifyElementContainsText(WebElement webElement, String text) {
-        wait.until(ExpectedConditions.textToBePresentInElement(webElement, text));
-        Assert.assertTrue(webElement.getText().toLowerCase().contains(text.toLowerCase()));
-    }
-
-    public void waitUntilListLessThan(By selector, int num) {
-        wait.until(ExpectedConditions.numberOfElementsToBeLessThan(selector, num));
-    }
-
-    public void selectByValue(WebElement webElement, String value) {
-        wait.until(ExpectedConditions.visibilityOf(webElement));
-        Select select = new Select(webElement);
-        select.selectByValue(value);
-    }
-
-    public void selectByList(List<WebElement> userList, String userTypeOption) {
-        for (WebElement user : userList) {
-            if (user.getText().contains(userTypeOption)) {
-                clickFunction(user);
-                break;
-            }
-        }
-    }
-
-    public void sendKeysWithActions (WebElement webElement, String value){
-        actions.sendKeys(webElement,value).build().perform();
-
-
+    public void sendKeysFunction(WebElement element, String value) {
+       waitUntilVisible(element);
+       scrollToElement(element);
+        element.sendKeys(value);
 
     }
 
+    public void clickFunction(WebElement element) {
+        waitUntilClickable(element);
+        scrollToElement(element);
+        element.click();
+    }
 
+    public void deleteSearchFunction(WebElement elementInput,WebElement elementSearch,String value) {
+        sendKeysFunction(elementInput,value);
+        clickFunction(elementSearch);
 
-}
+    }
+
+    public void deleteFunction(WebElement firstDelete, WebElement deleteBttn) {
+
+        wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.xpath("//ms-delete-button//button"), 5));
+        firstDelete.click();
+        deleteBttn.click();
+
+    }
+
+    public void waitUntilVisible(WebElement element){
+        WebDriverWait wait=new WebDriverWait(BaseDriver.getDriver(),20);
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitUntilClickable(WebElement element){
+        WebDriverWait wait=new WebDriverWait(BaseDriver.getDriver(),10);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+
+    }
+
+    public void scrollToElement(WebElement element){
+        JavascriptExecutor js= (JavascriptExecutor) BaseDriver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView();", element);
+    }
+
+    public void scrollToUpElement(WebElement element){
+        JavascriptExecutor js= (JavascriptExecutor) BaseDriver.getDriver();
+        js.executeScript("arguments[0].setAttribute('style', 'top:0px')", element);
+        js.executeScript("arguments[0].scrollIntoView();", element);
+    }
+
+    }
