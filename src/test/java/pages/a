@@ -1,7 +1,0 @@
-
- 3.7) Ismi MySubjectCat olan bir SubjectCategories oluşturun. (Education> Setup>
-SubjectCategories) buradan Subjects kısmına gidip add kisminda yeni bir subject
-ekleyin. (Education> Setup> Subjects) Daha sonra Subject Category den henüz
-oluşturduğunuz MySubjectCat secin. Bir Subjects oluşturduktan sonra onu Subject
-Category den silmeyi deneyin ve SILINMEDIGINI test edin.
- 3.8) Yeni bir Position Salary oluşturun onu DUZENLEYIN (editleyin) ve onu
