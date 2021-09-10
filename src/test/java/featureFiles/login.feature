@@ -1,9 +1,12 @@
+Feature: Login Functionally
 
 
-Feature: Login
+  Scenario: Login with validate username and password
+    Given Navigate to Basqar
+    Then   Enter valid username and password
+    Then  Success message should be displayed
 
-  Scenario: Login with valid username and password
-
-    Given Navigate to basqar
-    And Enter username and password and click login button
-    Then User should login successfully
+    Scenario: Login with invalid username and password
+      Given Navigate to Basqar
+      Then  Enter invalid username and password
+      Then Error message should be displayed
