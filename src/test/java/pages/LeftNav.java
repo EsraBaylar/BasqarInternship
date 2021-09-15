@@ -56,6 +56,8 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "//span[text()='Budget Groups']")
     private WebElement budgetGroups;
 
+    @FindBy(xpath = "//span[text()='Cost Centers']")
+    private WebElement CostCenters;
 
     public WebElement getBudget() {
         return budget;
@@ -125,5 +127,7 @@ public class LeftNav extends Parent {
         return setupHRbutton;
     }
 
-
+    public WebElement getCostCenters() {
+        return CostCenters;
+    }
 }
