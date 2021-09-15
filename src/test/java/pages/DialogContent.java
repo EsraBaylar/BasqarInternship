@@ -178,9 +178,20 @@ public class DialogContent extends Parent {
     @FindBy(css = "[data-placeholder='Description']")
     private WebElement findDescription;
 
-
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement deleteConfirmButton;
+
+    @FindBy(xpath =" //ms-add-button//span[@class='mat-button-wrapper']")
+    private WebElement costAdd;
+
+    @FindBy(xpath ="//mat-select[@formcontrolname='type']//div//div")
+    private WebElement type;
+
+    @FindBy(xpath ="//div[@class='mat-chip-list-wrapper']")
+    private WebElement prefixes;
+
+    @FindBy(xpath ="//span[contains(text(),'Personal')]")
+    private WebElement personal;
 
     public WebElement getAcceptCookies(){
         return acceptCookies;
@@ -404,5 +415,21 @@ public class DialogContent extends Parent {
 
     public WebElement getDeleteConfirmButton() {
         return deleteConfirmButton;
+    }
+
+    public WebElement getCostAdd() {
+        return costAdd;
+    }
+
+    public WebElement getType() {
+        return type;
+    }
+
+    public WebElement getPrefixes() {
+        return prefixes;
+    }
+
+    public WebElement getPersonal() {
+        return personal;
     }
 }
